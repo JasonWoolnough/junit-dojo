@@ -8,7 +8,10 @@ public class Animal {
     private String family;
     private String species;
 
-    private Animal(){};
+    private Animal() {
+    }
+
+    ;
 
     public Animal(String name, Long animalCode) {
         AnimalE animalE = AnimalE.fromCode(animalCode);
@@ -43,4 +46,29 @@ public class Animal {
             throw new AnimalNotFoundException(code);
         }
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public void setFamily(String family) {
+        this.family = family;
+    }
+
+    public String getSpecies() {
+        return species;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
 }
