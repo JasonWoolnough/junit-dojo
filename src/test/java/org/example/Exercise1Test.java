@@ -11,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 import static org.mockito.Mockito.when;
 
 /**
@@ -44,8 +46,9 @@ public class Exercise1Test {
 
         when(carAdapter.save(captor.capture())).thenReturn(carDto);
 
-        Car savedcar = this.exercise1.saveCar(savecar);
-        Assert.assertNotNull(savedcar);
-        Assert.assertEquals(savecar,savedcar);
+        Car savedcar = exercise1.saveCar(savecar);
+        assertThat(savedcar.getMake(),equalTo("Honda"));
+        assertThat(savedcar.getColour(),equalTo("blue"));
+        assertThat(savedcar.getModel(),equalTo("Civic"));
     }
 }
