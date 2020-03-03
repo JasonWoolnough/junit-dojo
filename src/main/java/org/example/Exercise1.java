@@ -12,7 +12,7 @@ public class Exercise1 {
     }
 
     public Car saveCar(Car car) {
-        CarDto carDto = carAdapter.save(car.toCarDto());
+        CarDto carDto = carAdapter.save(new CarDto());
         return new Car(carDto);
     }
 }
